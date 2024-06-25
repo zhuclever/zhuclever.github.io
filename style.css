@@ -1,0 +1,140 @@
+body{
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+header{
+    width: 83%;
+    display: flex;
+    flex-direction: row;
+    margin: auto 10% 7% 7%;
+    gap: 13.5%;
+    align-items: center;
+}
+
+.headerImg{
+    display: block;
+    height:auto;
+    flex: 50%;
+}
+
+.headerImg img{
+    width: 100%;
+}
+
+header article{
+    flex: 50%;
+    width:auto;
+    margin: auto;
+    padding-bottom: 0%;
+}
+
+.headerTitleImg{
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.textSection{
+    text-align: justify;
+    line-height: 1.5em;
+    width: 95%;
+    margin: 5% auto 0;
+    padding: 0;
+}
+
+.headerDescription{
+    display: block;
+    font-size: 1.3em;
+}
+.headerDescription .beText{
+    font-weight: 400;
+}
+.headerDescription .inlineLink{
+    color:black;
+    background-image: linear-gradient(to right, black 20%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: 5px 1.15px;
+    background-repeat: repeat-x;
+    text-decoration: none;
+}
+.headerDescription .inlineLink:hover{
+    font-weight: 400;
+}
+.navList{
+    display: flex;
+    margin-top: 8%;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.navLink{
+    --randomPosX: 0;
+    --randomPosY: 0;
+    --maskOpacity: 0;
+
+    display: block;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    transform: translate(0,0) skew(0deg);
+}
+.navLink::before{
+    content:attr(title);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: black;
+    mask-image: url("./images/mask.svg");
+    mask-size: cover;
+    mask-repeat: repeat space;
+    mask-position: var(--randomPosX) var(--randomPosY);
+    opacity: var(--maskOpacity);
+}
+
+.navLink:hover{
+    --maskOpacity: 1;
+}
+
+@media (max-width: 1099px){
+    header{
+        width: 60%;
+        flex-direction: column;
+        margin: auto 20% 10% 20%;
+        gap: 3em;
+        align-items: center;
+    }
+    .headerTitleImg{
+        width: 80%;
+        margin: 0 10% 5% 10%;
+    }
+}
+
+@media (max-width: 799px){
+    body{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 699px){
+    .navList{
+        font-size: 1.2em;
+    }
+    header{
+        width: 70%;
+        margin: auto 15% 10% 15%;
+    }
+}
+
+@media (max-width: 589px){
+    body{
+        font-size: 12px;
+    }
+    header{
+        width: 80%;
+        margin: auto 10% 10% 10%;
+    }
+}
