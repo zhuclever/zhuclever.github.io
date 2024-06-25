@@ -47,8 +47,8 @@ function centerHeader(){
 }
 
 function randomizeMaskPos(link){
-        let randomX = randomIntFromInterval(25, 35);
-        let randomY = randomIntFromInterval(2, 7);
+        let randomX = randomIntFromInterval(50, 100);
+        let randomY = randomIntFromInterval(1, 3);
         link.style.setProperty("--randomPosX", `${randomX}px`);
         link.style.setProperty("--randomPosY", `${randomY}px`);
 }
