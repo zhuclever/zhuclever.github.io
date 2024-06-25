@@ -1,9 +1,14 @@
 let header;
 let links;
 
-document.addEventListener("DOMContentLoaded", ()=>{
+const resizeObserver = new ResizeObserver(()=>{
+    centerHeader();
+})
+
+window.addEventListener("load", ()=>{
     header = document.getElementById("zhuHeader");
     centerHeader();
+    resizeObserver.observe(document.querySelector("#zhuHeader"));
 
     links = document.getElementsByClassName("navLink");
 
@@ -50,8 +55,4 @@ function randomizeMaskPos(link){
 
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
-window.onresize = ()=>{
-    centerHeader();
 }
