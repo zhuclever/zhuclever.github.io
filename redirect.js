@@ -8,5 +8,7 @@ params.forEach((value, key) => {
     params.set(key, encodeURIComponent(value));
   });
 
+let queryString = "?"+params.toString();
+
 // Redirect with existing parameters
-window.location.href = `https://zhua05nuo.wixstudio.com/zhuclever${params.toString()}`;
+window.location.href = `https://zhua05nuo.wixstudio.com/zhuclever${queryString}`;
