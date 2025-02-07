@@ -15,4 +15,4 @@ if(params.size){
 
 
 // Redirect with existing parameters
-window.location.href = `https://zhua05nuo.wixstudio.com/zhuclever${queryString}`;
+window.location.href = `https://zhua05nuo.wixstudio.com/zhuclever-design${queryString}`;
