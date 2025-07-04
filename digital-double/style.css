@@ -1,0 +1,262 @@
+@font-face {
+    /* This is the name you will use to reference the font later */
+    font-family: 'DecoTitle';
+  
+    /* The path to the font file, relative to your CSS file */
+    src: url("./fonts/Gatometrix.woff2") format('woff2');
+    
+    /* Define the weight and style for this font file */
+    font-weight: normal; /* or 400 */
+    font-style: normal;
+}
+@font-face {
+    /* This is the name you will use to reference the font later */
+    font-family: 'DecoSubTitle';
+  
+    /* The path to the font file, relative to your CSS file */
+    src: url("./fonts/Aretha\ Bridge.woff2") format('woff2');
+    
+    /* Define the weight and style for this font file */
+    font-weight: normal; /* or 400 */
+    font-style: normal;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+header{
+    /* width: 83%; */
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    /* margin: auto 10% 7% 7%; */
+    margin: auto 20% 10% 20%;
+    /* gap: 13.5%; */
+    gap: 3em;
+    align-items: center;
+}
+
+.headerImg{
+    display: block;
+    width: 100vh;
+    height: auto;
+    flex: 50%;
+    justify-content: space-around;
+}
+
+.headerImg img{
+    width: 100%;
+}
+
+header article{
+    flex: 50%;
+    width:auto;
+    margin: auto;
+    padding-bottom: 0%;
+}
+
+.headerTitleImg{
+    margin-top: 5%;
+    margin-left: 20px;
+    width: 60%;
+    /* margin-bottom: 2.5%; */
+}
+
+.textSection{
+    text-align: justify;
+    line-height: 1.5rem;
+    width: 95%;
+    margin: 4.5rem auto 0;
+    padding: 0;
+}
+
+.mainTitle{
+    margin-top: 1rem;
+    margin-left: 17px;
+    font-family: 'DecoTitle', Arial, sans-serif;
+    font-size: 10rem;
+}
+
+.mainSubTitle{
+    margin-top: -1rem;
+    margin-left: 25px;
+    font-family: 'DecoSubTitle', Arial, sans-serif;
+    font-size: 2.15rem;
+}
+
+.subSubTitle{
+    margin-top: 1rem;
+    margin-left: 22px;
+}
+
+.headerDescription{
+    display: block;
+    font-size: 1.3rem;
+    font-stretch: 88%;
+}
+.headerDescription .beText{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.headerDescription .itaText{
+    font-weight: 400;
+    font-style: italic;
+    font-size: .85em;
+}
+.headerDescription .miditaText{
+    font-weight: 390;
+    font-size: 1.15rem;
+    font-style: italic;
+}
+.headerDescription .subTitle{
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+.headerDescription .inlineLink{
+    color:black;
+    background-image: linear-gradient(to right, black 20%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: 5px 1.15px;
+    background-repeat: repeat-x;
+    text-decoration: none;
+    font-weight: 390;
+}
+.headerDescription .inlineLink:hover{
+    font-weight: 630;
+}
+.headerDescription .inlineList{
+    font-size: 1.15rem;
+    list-style: none; /* Removes the default bullet point */
+    padding-left: 0;  /* Removes the browser's default indentation */
+}
+
+.headerDescription .normalList{
+    font-size: 1.3rem;
+}
+
+.headerDescription .inlineList li::before {
+    content: '•'; /* The character for the dot. You can use &bull; in HTML */
+    
+    /* --- Style your custom dot here --- */
+    color: #000;         /* Change the color of the dot */
+    font-size: 1.15em;      /* Make the dot slightly larger than the text */
+    font-weight: bold;     /* Make it bold */
+    
+    /* --- Position the dot --- */
+    display: inline-block; /* Needed to apply width and margin */
+    margin-right: 10px;     /* Creates space between the dot and the text */
+  }
+
+.headerDescription .inlineList li + li {
+    margin-top: 1.2rem; /* Adds space above every item except the first */
+}
+
+.navList{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding-top: .45em;
+    padding-bottom: .28em;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    font-size: 1.3em;
+    font-weight: 700;
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter: blur(1.8px);
+    border-top: 2px solid black
+}
+
+.navList::before{
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*ApplytheSVGfilter*/filter: url(#noiseFilter);
+    /*Youmayneedtoadjustopacitydependingonthefilter'soutput*/opacity: 0.17;
+    pointer-events: none;
+    -webkit-filter: url(#noiseFilter) ;
+}
+
+.navLink{
+    --randomPosX: 0;
+    --randomPosY: 0;
+    --maskOpacity: 0;
+
+    display: block;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    transform: translate(0,0) skew(0deg);
+}
+.navLink::before{
+    content:attr(title);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: black;
+    mask-image: url("./images/mask.svg");
+    mask-size: cover;
+    mask-repeat: repeat space;
+    mask-position: var(--randomPosX) var(--randomPosY);
+    opacity: var(--maskOpacity);
+}
+
+.navLink:hover{
+    --maskOpacity: 1;
+}
+
+
+@media (max-width: 1099px){
+    header{
+        width: 60%;
+        flex-direction: column;
+        margin: auto 20% 10% 20%;
+        gap: 3em;
+        align-items: center;
+    }
+    .headerTitleImg{
+        width: 80%;
+        margin: 0 10% 5% 10%;
+    }
+}
+
+@media (max-width: 799px){
+    body{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 699px){
+    .navList{
+        font-size: 1.2em;
+    }
+    header{
+        width: 70%;
+        margin: auto 15% 10% 15%;
+    }
+}
+
+@media (max-width: 589px){
+    body{
+        font-size: 12px;
+    }
+    header{
+        width: 80%;
+        margin: auto 10% 10% 10%;
+    }
+}
