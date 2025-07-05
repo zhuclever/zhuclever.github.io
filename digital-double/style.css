@@ -25,6 +25,7 @@
 html{
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body{
@@ -32,6 +33,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    overflow-x: hidden;
 }
 
 header{
@@ -48,10 +50,11 @@ header{
 
 .headerImg{
     display: block;
-    width: 100vh;
+    width: min(100vh, 115vw);
     height: auto;
     flex: 50%;
     justify-content: space-around;
+    margin-top: -2rem;
 }
 
 .headerImg img{
@@ -123,10 +126,10 @@ header article{
     background-size: 5px 1.15px;
     background-repeat: repeat-x;
     text-decoration: none;
-    font-weight: 390;
+    font-weight: 375;
 }
 .headerDescription .inlineLink:hover{
-    font-weight: 630;
+    font-weight: 585;
 }
 .headerDescription .inlineList{
     font-size: 1.18rem;
@@ -173,7 +176,8 @@ header article{
     font-weight: 700;
     background-color: rgba(255,255,255,0.6);
     backdrop-filter: blur(1.8px);
-    border-top: 2px solid black
+    border-top: 2px solid black;
+    overflow-x: hidden;
 }
 
 .navList::before{
@@ -181,13 +185,14 @@ header article{
     position: absolute;
     top: 4px;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     overflow: hidden;
     filter: url(#noiseFilter);
     opacity: 0.17;
     pointer-events: none;
-    -webkit-filter: url(#noiseFilter) ;
+    -webkit-filter: url(#noiseFilter);
+    overflow: hidden;
 }
 
 .navLink{
@@ -218,6 +223,8 @@ header article{
     --maskOpacity: 1;
 }
 
+
+/* Title Responsive */
 @media (max-width: 1440px){
     .mainTitle{
         font-size: 10rem;
@@ -244,7 +251,7 @@ header article{
         font-size: 2rem;
     }
 }
-/* double lined title */
+/* ---double lined title */
 @media (max-width: 920px){
     .mainTitle{
         font-size: 12.5rem;
@@ -322,7 +329,7 @@ header article{
 
 
 
-
+/* Overall font responsive */
 @media (max-width: 1099px){
     header{
         width: 60%;
@@ -370,5 +377,52 @@ header article{
     header{
         width: 90%;
         margin: auto 5% 15% 5%;
+    }
+}
+
+
+@media (max-width: 1400px){
+    .headerImg{
+        width: min(115vw, 110vh);
+    }
+}
+@media (max-width: 1200px){
+    .headerImg{
+        width: min(115vw, 105v);
+    }
+}
+@media (max-width: 1000px){
+    .headerImg{
+        width: min(115vw, 97vh);
+    }
+}
+@media (max-width: 850px){
+    .headerImg{
+        width: min(115vw, 91vh);
+    }
+}
+@media (max-width: 770px){
+    .headerImg{
+        width: min(115vw, 86vh);
+    }
+}
+@media (max-width: 670px){
+    .headerImg{
+        width: min(115vw, 79vh);
+    }
+}
+@media (max-width: 570px){
+    .headerImg{
+        width: min(115vw, 71vh);
+    }
+}
+@media (max-width: 470px){
+    .headerImg{
+        width: min(115vw, 63vh);
+    }
+}
+@media (max-width: 400px){
+    .headerImg{
+        width: min(115vw, 55vh);
     }
 }
