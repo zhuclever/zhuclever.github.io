@@ -46,7 +46,6 @@ header{
     /* gap: 13.5%; */
     gap: 3rem;
     align-items: center;
-    /* overflow-x: hidden; */
 }
 
 .headerImg{
@@ -416,16 +415,16 @@ header article{
 }
 @media (max-width: 570px){
     .headerImg{
-        width: min(115vw, 71vh);
+        width: min(130vw, 71vh);
     }
 }
 @media (max-width: 470px){
     .headerImg{
-        width: min(115vw, 63vh);
+        width: min(130vw, 63vh);
     }
 }
 @media (max-width: 400px){
     .headerImg{
-        width: min(115vw, 55vh);
+        width: min(127vw, 55vh);
     }
 }
