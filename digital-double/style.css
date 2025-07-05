@@ -185,14 +185,14 @@ header article{
     position: absolute;
     top: 4px;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     overflow: hidden;
     filter: url(#noiseFilter);
     opacity: 0.17;
     pointer-events: none;
     -webkit-filter: url(#noiseFilter);
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .navLink{
