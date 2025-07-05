@@ -46,6 +46,7 @@ header{
     /* gap: 13.5%; */
     gap: 3rem;
     align-items: center;
+    /* overflow-x: hidden; */
 }
 
 .headerImg{
@@ -55,10 +56,12 @@ header{
     flex: 50%;
     justify-content: space-around;
     margin-top: -2rem;
+    overflow: hidden;
 }
 
 .headerImg img{
     width: 100%;
+    overflow: hidden;
 }
 
 header article{
